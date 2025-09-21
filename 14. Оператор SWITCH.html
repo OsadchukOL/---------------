@@ -7,38 +7,37 @@
 <body>
     <h1>Оператор SWITCH</h1>
     <script>
-        let name = prompt("First ");
-        let znak = prompt("Znak")
-        let pol = prompt("Second ");
-        
+// 1
+let start = parseInt(prompt("Начало:"));
+let finish = parseInt(prompt("Конец:"));
+let summa = 0;
+for (let i = start; i <= finish; i++) {
+    summa += i;
+}
+alert("Сумма чисел: " + summa);
 
-        switch (name) {
-            
-            case "0":
-                alert("Error");
-                break;
+// 2
+let x = parseInt(prompt("Первое число:"));
+let y = parseInt(prompt("Второе число:"));
+while (y !== 0) {
+    let temp = y;
+    y = x % y;
+    x = temp;
+}
+alert("Результат: " + x);
 
+// 3
+let chislo = parseInt(prompt("Введи число:"));
+for (let i = 1; i <= chislo; i++) {
+    if (chislo % i === 0) {
+        alert("Делитель: " + i);
+    }
+}
 
-        }
-        switch (znak){
-            case "+":
-                alert(parseInt(name) + parseInt(pol))
-                break;
+// 4
+let stroka = prompt("Напиши число:");
+alert("Цифр в числе = " + stroka.length);
 
-            case "*":
-                alert(parseInt(name) * parseInt(pol))
-                break;
-
-            case "/":
-             alert(parseInt(name) / parseInt(pol) );
-             break;
-
-            default: 
-            alert(parseInt(name) - parseInt(pol))
-            break;
-                
-
-        }
     </script>
 </body>
 </html>
