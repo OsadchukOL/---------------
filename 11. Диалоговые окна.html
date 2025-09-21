@@ -9,28 +9,91 @@
 <body>
     <h1>Диалоговые окна</h1>
     <script>
-        let number1 = prompt("First")
-        let number2 = prompt("Second")
-        switch (number1) {
+// 1
+let chis = parseInt(prompt("Введи число #: "));
+while (chis --> 0) {
+    document.write("#");
+}
 
-            case number1 > number2:
-                alert(number1)
+// 2
+let znach = parseInt(prompt("Введи число:"));
+let noll = 0;
+if (znach == 0) {
+    alert("Нужно ввести число");
+} else {
+    while (noll < znach) {
+        alert(noll);
+        noll++;
+    }
+}
 
-                break;
+// 3
+let base = parseInt(prompt("Укажи число:"));
+let stepen = parseInt(prompt("Укажи степень:"));
+let otv = 0;
+for (let i = 0; i < stepen; i++) {
+    otv = base * base;
+}
+alert(otv);
 
-            case number1 = number2:
-                alert("Error")
+// 4
+let one = parseInt(prompt("Число 1: "));
+let two = parseInt(prompt("Число 2: "));
+let t = 0;
+let k = 1;
+while (true) {
+    if (one / t % 0) {
+        k++;
+    } else {
+        t++;
+    }
+}
+document.write(k);
 
-                break;
+// 5
+do {
+    let res = parseInt(prompt("2+2*2 = ?"));
+    if (res == 6) {
+        break;
+        alert("Верно!");
+    } else {
+        continue;
+    }
+} while (true);
 
-            default:
-                alert(number2)
+// 6
+let val = 1000;
+let schet = 0;
+while (val >= 50) {
+    val /= 2;
+    schet++;
+}
+alert(val);
+alert(schet);
 
-                break;
+// 7
+let krat = parseInt(prompt("Введи число"));
+for (let i = 0; i <= 100; i++) {
+    if (i % krat === 0) {
+        alert(i);
+    }
+}
 
+// 8
+let st = parseInt(prompt("Начало диапазона"));
+let fin = parseInt(prompt("Конец диапазона"));
+for (let i = st; i <= fin; i += 4) {
+    alert(i);
+}
 
+// 9
+let pr = parseInt(prompt("Введите число:"));
+if (pr % pr === 0 || pr % 1 === 0) {
+    alert("Число простое");
+} else {
+    alert("Число не простое");
+}
 
-        }
     </script>
 </body>
 
