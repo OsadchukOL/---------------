@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Массивы</title>
+</head>
+<body>
+    <script>
+//  1
+let age = parseInt(prompt("Сколько тебе лет?"), 10);
+if (age >= 0 && age <= 5) {
+  alert("маленький ребенок");
+} else if (age >= 6 && age <= 17) {
+  alert("школьник");
+} else if (age >= 18 && age <= 59) {
+  alert("взрослый человек");
+} else if (age >= 60) {
+  alert("пенсионер");
+} else {
+  alert("возраст введен неверно");
+}
+
+//  2
+let num = prompt("Введи число от 0 до 9:");
+switch (num) {
+  case "1": alert("!"); break;
+  case "2": alert("@"); break;
+  case "3": alert("#"); break;
+  case "4": alert("$"); break;
+  case "5": alert("%"); break;
+  case "6": alert("^"); break;
+  case "7": alert("&"); break;
+  case "8": alert("*"); break;
+  case "9": alert("("); break;
+  case "0": alert(")"); break;
+  default: alert("ошибка: введи число 0-9");
+}
+
+//  3
+let threeNum = parseInt(prompt("Введи трехзначное число:"), 10);
+threeNum = Math.abs(threeNum);
+if (threeNum >= 100 && threeNum <= 999) {
+  let d1 = Math.floor(threeNum / 100);
+  let d2 = Math.floor((threeNum / 10) % 10);
+  let d3 = threeNum % 10;
+  if (d1 === d2 || d1 === d3 || d2 === d3) {
+    alert("есть совпадения");
+  } else {
+    alert("цифры разные");
+  }
+} else {
+  alert("это не трехзначное число");
+}
+
+//  4
+let y = parseInt(prompt("Введи год:"), 10);
+if ((y % 400 === 0) || (y % 4 === 0 && y % 100 !== 0)) {
+  alert("год високосный");
+} else {
+  alert("год обычный");
+}
+
+//  5
+let fiveNum = parseInt(prompt("Введи пятизначное число:"), 10);
+fiveNum = Math.abs(fiveNum);
+if (fiveNum >= 10000 && fiveNum <= 99999) {
+  let a = Math.floor(fiveNum / 10000) % 10;
+  let b = Math.floor(fiveNum / 1000) % 10;
+  let d = Math.floor(fiveNum / 10) % 10;
+  let e = fiveNum % 10;
+  if (a === e && b === d) {
+    alert("это палиндром");
+  } else {
+    alert("не палиндром");
+  }
+} else {
+  alert("введи именно 5 цифр");
+}
+
+//  6
+let dollars = parseFloat(prompt("Сколько у тебя USD?"));
+const EUR = 0.95;
+const UAH = 40.5;
+const GBP = 0.78;
+let option = prompt("Куда конвертировать?\n1) EUR\n2) UAH\n3) GBP");
+switch (option) {
+  case "1": alert((dollars * EUR).toFixed(2) + " евро"); break;
+  case "2": alert((dollars * UAH).toFixed(2) + " гривен"); break;
+  case "3": alert((dollars * GBP).toFixed(2) + " фунтов"); break;
+  default: alert("выбери 1, 2 или 3");
+}
+
+//  9 
+let points = 0;
+let q1 = prompt("Сколько будет 2*3?\n1) 5\n2) 6\n3) 7");
+if (q1 === "2") points += 2;
+
+let q2 = prompt("Столица Италии?\n1) Рим\n2) Берлин\n3) Киев");
+if (q2 === "1") points += 2;
+
+let q3 = prompt("Сколько дней в неделе?\n1) 5\n2) 6\n3) 7");
+if (q3 === "3") points += 2;
+
+alert("Итоговый счет: " + points + " баллов");
+
+//  10 
+let dd = parseInt(prompt("Введите день:"), 10);
+let mm = parseInt(prompt("Введите месяц:"), 10);
+let yy = parseInt(prompt("Введите год:"), 10);
+
+function leap(y) {
+  return (y % 400 === 0) || (y % 4 === 0 && y % 100 !== 0);
+}
+function days(mm, yy) {
+  if (mm === 2) return leap(yy) ? 29 : 28;
+  if ([4, 6, 9, 11].includes(mm)) return 30;
+  return 31;
+}
+
+let maxDay = days(mm, yy);
+if (dd < 1 || dd > maxDay || mm < 1 || mm > 12) {
+  alert("некорректная дата");
+} else {
+  dd++;
+  if (dd > maxDay) {
+    dd = 1;
+    mm++;
+    if (mm > 12) {
+      mm = 1;
+      yy++;
+    }
+  }
+  alert("Следующая дата: " + dd + "." + mm + "." + yy);
+}
+
+    </script>
+</body>
+</html>

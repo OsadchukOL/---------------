@@ -7,20 +7,37 @@
 <body>
     <h1>Оператор SWITCH</h1>
     <script>
-        let name = prompt("Введите свое имя:", "Александр");
-        let pol = prompt("Введите пол (м/ж):", "м");
+        let name = prompt("First ");
+        let znak = prompt("Znak")
+        let pol = prompt("Second ");
+        
 
-        switch (pol) {
-            case "м":
-            case "m":
-                alert("Мои приветствия, господин " + name);
+        switch (name) {
+            
+            case "0":
+                alert("Error");
                 break;
-            case "ж":
-            case "f":
-                alert("Мои приветствия, госпожа " + name);
+
+
+        }
+        switch (znak){
+            case "+":
+                alert(parseInt(name) + parseInt(pol))
                 break;
-            default:
-                alert("Хм-м-м?..");
+
+            case "*":
+                alert(parseInt(name) * parseInt(pol))
+                break;
+
+            case "/":
+             alert(parseInt(name) / parseInt(pol) );
+             break;
+
+            default: 
+            alert(parseInt(name) - parseInt(pol))
+            break;
+                
+
         }
     </script>
 </body>
